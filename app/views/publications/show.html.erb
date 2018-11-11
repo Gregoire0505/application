@@ -1,0 +1,17 @@
+<h2> We are showing the publication <%= @publication.title %> </h2>
+
+<h3> <%= @publication.title %> </h3>
+<p> Author : <%= @publication.author %> </p>
+<p> Town : <%= @publication.town %> </p>
+<p> Type of the publication :  <%= @publication.type %> </p>
+<p> Text of the publication :  <%= @publication.text %> </p>
+<p> Reputation :  <%= @publication.reputation_point %> </p>
+
+<%= link_to "Back", root_path %>
+
+<% if user_signed_in? %>
+  <% if @publication.user_id == current_user.id %>
+    <%= link_to "Edit", edit_publication_path(@publication) %>
+    <%= link_to "Delete", publication_path(@publication), method: :delete, data: { confirm: "Are you sure ?"} %>
+  <% end %>
+<% end %>
