@@ -1,0 +1,9 @@
+<h2> <%= @itinerary.name %> </h2>
+
+<p> <b> Description of the itinerary : </b> <%= @itinerary.description %> </p>
+<p> <b> Place of the activity : </b> <%= @itinerary.activity_place %> </p>
+<p> <b> Duration : </b>  <%= @itinerary.duration %> </p>
+
+<%= link_to "Back", itineraries_path %>
+<%= link_to "Edit", edit_itinerary_path(@itinerary) %>
+<%= link_to "Delete", itinerary_path(@itinerary), method: :delete, data: { confirm: "Are you sure ?"} %>

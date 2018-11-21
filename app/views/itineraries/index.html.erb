@@ -1,0 +1,12 @@
+
+<h2> Itineraries available </h2>
+
+<% @itineraries.each do |itinerary| %>
+  <a href="/itineraries/<%= itinerary.id %>"> <%= itinerary.name %> </a>
+  <p> <%= itinerary.description %> </p>
+<% end %>
+
+<br>
+<h4> You want to create a new itinerary ? </h4>
+
+<p class="button"> <%= link_to "New Itinerary", new_itinerary_path %> </p>

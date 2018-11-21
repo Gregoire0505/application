@@ -1,5 +1,5 @@
 class Town < ApplicationRecord
-  belongs_to :publication, required: false
-  belongs_to :country, required: false
+  has_many :publications
+  belongs_to :country
 
 end

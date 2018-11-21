@@ -13,10 +13,8 @@
 ActiveRecord::Schema.define(version: 2018_11_11_182007) do
 
   create_table "comments", force: :cascade do |t|
-    t.string "publication"
-    t.string "author"
-    t.string "contained"
-    t.text "text"
+    t.integer "rating"
+    t.text "commentaire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -26,11 +24,9 @@ ActiveRecord::Schema.define(version: 2018_11_11_182007) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "number_subscriptions"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "town_id"
   end
 
   create_table "itineraries", force: :cascade do |t|
@@ -44,17 +40,13 @@ ActiveRecord::Schema.define(version: 2018_11_11_182007) do
 
   create_table "publications", force: :cascade do |t|
     t.string "title"
-    t.string "author"
-    t.time "creation_date"
     t.string "town"
-    t.string "type"
+    t.string "publication_type"
     t.text "text"
-    t.integer "reputation_point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "town_id"
-    t.integer "comment_id"
   end
 
   create_table "towns", force: :cascade do |t|

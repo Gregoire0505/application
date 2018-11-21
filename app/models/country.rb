@@ -1,3 +1,3 @@
 class Country < ApplicationRecord
-  has_many :towns, required: false
+  has_many :towns
 end

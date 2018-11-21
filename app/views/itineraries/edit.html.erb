@@ -1,0 +1,11 @@
+<h2> Edit <%= @itinerary.name %> </h2>
+
+<%= simple_form_for @itinerary, :html => { :multipart => true } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :activity_place %>
+  <%= f.input :duration %>
+  <%= f.button :submit %>
+<% end %>
+
+<p> <%= link_to "Back", itineraries_path %> </p>
