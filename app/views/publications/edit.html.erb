@@ -1,6 +1,13 @@
 <h2> Edit <%= @publication.title %> </h2>
 
-<p> <%= render 'form' %> </p>
+<%= simple_form_for @publication, :html => { :multipart => true } do |f| %>
+  <%= f.input :title %>
+  <%= f.select :town_id, @towns %>
+  <%= f.file_field :publication_img %>
+  <%= f.input :publication_type %>
+  <%= f.input :text %>
+  <%= f.button :submit %>
+<% end %>
 
 <p> <%= link_to "Back", root_path %> </p>
 <p> <%= link_to "Index", publications_path %> </p>

@@ -1,6 +1,7 @@
-<%= simple_form_for @publication do |f| %>
+<%= simple_form_for @publication, :html => { :multipart => true } do |f| %>
   <%= f.input :title %>
   <%= select_tag(:town_id, options_for_select(@towns), :prompt => "Select the town") %>
+  <%= f.file_field :publication_img %>
   <%= f.input :publication_type %>
   <%= f.input :text %>
   <%= f.button :submit %>

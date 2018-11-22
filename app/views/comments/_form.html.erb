@@ -1,0 +1,5 @@
+<%= simple_form_for([@publication, @publication.comments.build]) do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :commentaire %>
+  <%= f.input :submit %>
+<% end %>

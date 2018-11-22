@@ -1,11 +1,11 @@
-<h2> We are showing the publication <%= @publication.title %> </h2>
+<h2> We are showing the publication : <%= @publication.title %> </h2>
 
 <h3> <%= @publication.title %> </h3>
-<p> Author : <%= @publication.user_id %> </p>
-<p> Town : <%= @publication.town %> </p>
-<p> Type of the publication :  <%= @publication.type %> </p>
-<p> Text of the publication :  <%= @publication.text %> </p>
-<p> Reputation :  <%= @publication.reputation_point %> </p>
+<p> <%= @publication.publication_img %> </p>
+<p> <b> Author : </b> <%= @publication.user_id %>  </p>
+<p> <b> Town : </b> <%= @publication.town_id %>  </p>
+<p> <b> Type : </b>  <%= @publication.publication_type %> </p>
+<p> <b> Text : </b> <%= @publication.text %> </p>
 
 <%= link_to "Back", root_path %>
 

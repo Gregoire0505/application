@@ -1,14 +1,5 @@
 <h1> This is our Home Page with the different publications </h1>
-
-<p> The time is now <%= Time.now %> </p>
-
-<p> The different fonctionalities of the website are here, click on it to see. </p>
-<ul>
-  <li> <a href="/towns" > Show the town </a> </li>
-  <li> <a href="/comments" > Show the different commentary  </a> </li>
-  <li> <a href="/itineraries" > Show the itinerary </a> </li>
-  <li> <a href="/countries" > Show the countries </a> </li>
-  <li> <a href="/publications" > Home page </a> </li>
+<p> The time is now <% t = Time.now %> <%= t.to_s %> </p>
 
 <h3> Publications available </h3>
   <%= @publications.each do |publication| %>

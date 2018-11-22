@@ -42,7 +42,7 @@ class PublicationsController < ApplicationController
 
   private
     def publication_params
-      params.require(:publication).permit(:title, :town, :publication_type, :text)
+      params.require(:publication).permit(:title, :town, :publication_type, :text, :publication_img)
     end
 
     def find_publication
