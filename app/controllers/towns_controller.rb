@@ -1,6 +1,6 @@
 class TownsController < ApplicationController
   before_action :find_town
-  
+
     def new
       @town = Town.new
     end

@@ -1,5 +1,6 @@
 class PublicationsController < ApplicationController
-  before_action :find_publication, only: [:show, :edit, :update, :destroy]
+  before_action :find_publication, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
     @publications = Publication.all.order("created_at DESC")
@@ -25,6 +26,7 @@ class PublicationsController < ApplicationController
   end
 
   def edit
+    @towns = Town.all.map { |c| [c.name, c.id]  }
   end
 
   def update
@@ -39,6 +41,16 @@ class PublicationsController < ApplicationController
     @publication.destroy
     redirect_to publications_path
   end
+
+    def upvote
+      @publication.upvote_from current_user
+      redirect_to @publication
+    end
+
+    def downvote
+      @publication.downvote_from current_user
+      redirect_to @publication
+    end
 
   private
     def publication_params

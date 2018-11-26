@@ -5,15 +5,12 @@ class ItinerariesController < ApplicationController
       @itineraries = Itinerary.all.order("created_at DESC")
     end
 
-
     def show
     end
-
 
     def new
       @itinerary = Itinerary.new
     end
-
 
     def create
       @itinerary = Itinerary.new(itinerary_params)
@@ -24,10 +21,8 @@ class ItinerariesController < ApplicationController
       end
     end
 
-
     def edit
     end
-
 
     def update
       if @itinerary.update(itinerary_params)
@@ -37,12 +32,10 @@ class ItinerariesController < ApplicationController
       end
     end
 
-
     def destroy
       @itinerary.destroy
       redirect_to itineraries_path
     end
-
 
     private
       def itinerary_params

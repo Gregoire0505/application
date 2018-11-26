@@ -1,0 +1,16 @@
+<div class="comment" >
+
+  <div class="comment-rating" data-score="<%= comment.rating %>"> </div>
+  <p> <%= comment.rating %> </p>
+  <p class="comment-commentaire"> <%= comment.commentaire %> </p>
+
+  <% if user_signed_in? %>
+    <% if comment.user_id == current_user.id %>
+      <div class="links btn-group" >
+      <%= link_to "Edit", edit_publication_comment_path(comment.publication, comment), class: "btn btn-custom" %>
+      <%= link_to "Delete", publication_comment_path(comment.publication, comment), method: :delete,  data: { confirm: "Are you sure ?" }, class: "btn btn-custom" %>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>

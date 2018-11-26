@@ -1,0 +1,7 @@
+<h3> Edit your comment </h3>
+
+<%= simple_form_for([@publication, @comment]) do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :commentaire %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
-before_action :find_book
+before_action :find_publication
+before_action :find_comment, only: [:edit, :update, :destroy]
+before_action :find_user, only: [:upvote, :downvote]
+before_action :authenticate_user!, only: [:new, :edit]
+
   def new
     @comment = Comment.new
   end
@@ -14,7 +18,33 @@ before_action :find_book
       else
         render 'new'
       end
+  end
+
+  def edit
+  end
+
+  def update
+    if @comment.update(comment_params)
+      redirect_to publication_path(@publication)
+    else
+      render 'edit'
     end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to publication_path(@publication)
+  end
+
+
+  def upvote
+    @comment.upvote_from current_user
+    redirect_to @publication
+  end
+
+  def downvote
+    @comment.downvote_from current_user
+    redirect_to @publication
   end
 
 
@@ -25,6 +55,15 @@ before_action :find_book
 
     def find_publication
       @publication = Publication.find(params[:publication_id])
+    end
+
+    def find_comment
+      @comment = Comment.find(params[:id])
+    end
+
+    def find_user
+      @comment.publication_id = @publication.id
+      @comment.user_id = current_user.id
     end
 
 end

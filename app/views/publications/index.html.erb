@@ -2,10 +2,17 @@
 <p> The time is now <% t = Time.now %> <%= t.to_s %> </p>
 
 <h3> Publications available </h3>
-  <%= @publications.each do |publication| %>
-      <a href="/publications/<%= publication.id %>"> <%= publication.title %> </a>
-      <p> <%= publication.text %> </p>
-    <% end %>
 
-<br>
-<p> <%= link_to "Back", root_path %> </p>
+
+<%= @publications.each do |publication| %>
+
+      <div class="col-sm-5 col-md-3">
+
+          <div style="text-align: center;">
+            <h3>  <a href="/publications/<%= publication.id %>"> <%= publication.title %> </a> </h3>
+            <%= image_tag publication.publication_img.url(:publication_index), class: "publication" %>
+          </div>
+
+      </div>
+
+<% end %>

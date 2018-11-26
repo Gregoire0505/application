@@ -1,17 +1,55 @@
-<h2> We are showing the publication : <%= @publication.title %> </h2>
 
-<h3> <%= @publication.title %> </h3>
-<p> <%= @publication.publication_img %> </p>
-<p> <b> Author : </b> <%= @publication.user_id %>  </p>
-<p> <b> Town : </b> <%= @publication.town_id %>  </p>
-<p> <b> Type : </b>  <%= @publication.publication_type %> </p>
-<p> <b> Text : </b> <%= @publication.text %> </p>
+<div class="row">
+    <div class="col-md-5">
+      <%= image_tag @publication.publication_img.url(:publication_show), class: "publication-show" %>
+    </div>
 
-<%= link_to "Back", root_path %>
+    <div class="col-md-6" >
+      <div class="publication-info" >
+          <h2 class="publication-title"> <%= @publication.title %> </h2>
+          <h3 class="avg-rating"> Average rating </h3>
+          <div class="average-publication-rating" data-score=<%= @average_publication %>> </div>
+          <span class="number-of-comments"> Based on <%= @publication.comments.count %> comments </span>
+          <h5 class="publication-author"> <b> Author : </b> <%= @publication.user_id %>  </h5>
+          <h5 class="publication-town"> <b> Town : </b> <%= @publication.town_id %>  </h5>
+          <h5> <b> Type : </b>  <%= @publication.publication_type %> </h5>
+          <h5 class="publication-description"> <b> Text : </b> <%= @publication.text %> </h5>
+        </div>
+        <br>
+        <div class="links btn-group">
+          <%= link_to "Back", root_path, class: "btn btn-custom" %>
 
-<% if user_signed_in? %>
-  <% if @publication.user_id == current_user.id %>
-    <%= link_to "Edit", edit_publication_path(@publication) %>
-    <%= link_to "Delete", publication_path(@publication), method: :delete, data: { confirm: "Are you sure ?"} %>
-  <% end %>
-<% end %>
+            <% if user_signed_in? %>
+              <% if @publication.user_id == current_user.id %>
+                <%= link_to "Edit", edit_publication_path(@publication), class: "btn btn-custom" %>
+                <%= link_to "Delete", publication_path(@publication), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-custom" %>
+              <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+      <div class="comments" >
+        <h1> Comments </h1>
+          <%= render @publication.comments %>
+            <div>
+              <%= link_to "Add Comment", new_publication_comment_path(@publication), class: "btn btn-custom" %>
+            </div>
+        </div>
+      </div>
+  </div>
+
+<%-# Commentaire -%>
+
+<script>
+  $('.comment-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

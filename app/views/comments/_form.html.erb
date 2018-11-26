@@ -1,5 +1,14 @@
 <%= simple_form_for([@publication, @publication.comments.build]) do |f| %>
-  <%= f.input :rating %>
+  <div id="comment-form">
+    <%= f.input :rating %>
+  </div>
   <%= f.input :commentaire %>
-  <%= f.input :submit %>
+  <%= f.button :submit %>
 <% end %>
+
+<script>
+  $('comment-form').raty({
+    path: '/assets/',
+    scoreName: 'comment[rating]'
+  });
+</script>
