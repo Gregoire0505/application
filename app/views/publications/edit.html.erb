@@ -1,13 +1,19 @@
-<h2> Edit <%= @publication.title %> </h2>
+<div class="col-md-6 col-md-offset-3">
+  <div class="edit-publication-form" >
 
-<%= simple_form_for @publication, :html => { :multipart => true } do |f| %>
-  <%= f.input :title %>
-  <%= f.select :town_id, @towns %>
-  <%= f.file_field :publication_img %>
-  <%= f.input :publication_type %>
-  <%= f.input :text %>
-  <%= f.button :submit %>
-<% end %>
+    <h2> Edit <%= @publication.title %> </h2>
 
-<p> <%= link_to "Back", root_path %> </p>
-<p> <%= link_to "Index", publications_path %> </p>
+    <%= simple_form_for @publication, :html => { :multipart => true } do |f| %>
+      <%= f.input :title %>
+      <%= f.select :town_id, @towns %>
+      <%= f.file_field :publication_img %>
+      <%= f.input :publication_type %>
+      <%= f.input :text %>
+      <%= f.button :submit, :class => "btn btn-custom2" %>
+    <% end %>
+
+  </div>
+  <br>
+  <p> <%= link_to "Back", root_path, class: "btn btn-custom" %> </p>
+
+</div>

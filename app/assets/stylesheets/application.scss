@@ -100,7 +100,7 @@ p.alert, p.notice {
 .btn-custom {
 	color: darken(#f1c40f, 5%);
 	background-color: #fff;
-	border: 1px solid darken(#f1c40f, 5%);
+  border: 2px darken(#f1c40f, 5%) solid;
 	padding: 8px 20px;
 	border-radius: 5px;
 	font-family: 'Ubuntu', sans-serif;
@@ -351,6 +351,72 @@ p.alert, p.notice {
 
 	.new-comment {
 		padding-top: 8px;
+	}
+
+}
+
+/* New Itinerary Form styles */
+
+.new-itinerary-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+}
+
+/* New Comment Form styles */
+
+.new-comment-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+}
+
+/* Edit Itinerary form */
+
+.edit-itinerary-form {
+
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+}
+
+/* Itinerary show info */
+
+.itinerary-info {
+	@include background-tile;
+  height: 225px;
+  width: 750px;
+
+	.itinerary-name {
+		margin-top: 0;
+		font-size: 2.5em;
+	}
+
+	.itinerary-place {
+		font-size: 1.05em;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+  .itinerary-duration {
+    font-size: 1.05em;
+
+  }
+
+	.itinerary-desc {
+		font-size: 1.05em;
+		line-height: 1.5;
+		margin-bottom: 15px;
+		margin-top: 15px;
 	}
 
 }

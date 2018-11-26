@@ -1,9 +1,17 @@
-<h2> <%= @itinerary.name %> </h2>
+<div class="row">
+  <div class="col-md-6">
+    <div class="itinerary-info">
+      <h2 class="itinerary-name"> <%= @itinerary.name %> </h2>
 
-<p> <b> Description of the itinerary : </b> <%= @itinerary.description %> </p>
-<p> <b> Place of the activity : </b> <%= @itinerary.activity_place %> </p>
-<p> <b> Duration : </b>  <%= @itinerary.duration %> </p>
+      <p class="itinerary-description"> <b> Description of the itinerary : </b> <%= @itinerary.description %> </p>
+      <p class="itinerary-place"> <b> Place of the activity : </b> <%= @itinerary.activity_place %> </p>
+      <p class="itinerary-duration"> <b> Duration : </b>  <%= @itinerary.duration %> </p>
 
-<%= link_to "Back", itineraries_path %>
-<%= link_to "Edit", edit_itinerary_path(@itinerary) %>
-<%= link_to "Delete", itinerary_path(@itinerary), method: :delete, data: { confirm: "Are you sure ?"} %>
+      </div>
+      <br>
+      <%= link_to "Back", itineraries_path, class: "btn btn-custom" %>
+      <%= link_to "Edit", edit_itinerary_path(@itinerary), class: "btn btn-custom" %>
+      <%= link_to "Delete", itinerary_path(@itinerary), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-custom" %>
+
+  </div>
+</div>

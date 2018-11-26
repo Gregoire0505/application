@@ -1,11 +1,16 @@
-<h2> Edit <%= @itinerary.name %> </h2>
+<div class="col-md-6 col-md-offset-3">
+  <div class="edit-itinerary-form" >
 
-<%= simple_form_for @itinerary, :html => { :multipart => true } do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :activity_place %>
-  <%= f.input :duration %>
-  <%= f.button :submit %>
-<% end %>
+    <h2> Edit <%= @itinerary.name %> </h2>
 
-<p> <%= link_to "Back", itineraries_path %> </p>
+    <%= simple_form_for @itinerary, :html => { :multipart => true } do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :activity_place %>
+      <%= f.input :duration %>
+      <%= f.button :submit, :class => "btn btn-custom2" %>
+    <% end %>
+  </div>
+  <br>
+  <p> <%= link_to "Back", itineraries_path, class: "btn btn-custom" %> </p>
+</div>
