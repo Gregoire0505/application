@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   root "publications#index"
   resources :itineraries
   resources :countries
-
+  resources :towns
 
   end

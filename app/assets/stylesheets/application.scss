@@ -349,9 +349,14 @@ p.alert, p.notice {
 
 	}
 
-	.new-comment {
-		padding-top: 8px;
-	}
+  .new-itinerary {
+    @include background-tile;
+    height: 135px;
+    width: 500px;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+  }
 
 }
 
@@ -413,6 +418,100 @@ p.alert, p.notice {
   }
 
 	.itinerary-desc {
+		font-size: 1.05em;
+		line-height: 1.5;
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+
+}
+
+.towns {
+
+	margin-top: 10px;
+
+	h1 {
+		margin-top: 0;
+		margin-bottom: 15px;
+		font-size: 2em;
+	}
+
+  .town-name {
+		margin-top: 0;
+		font-size: 2em;
+	}
+
+	.town {
+    @include background-tile;
+    height: 125px;
+    width: 420px;
+		border-bottom: 1px solid gainsboro;
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+
+		.town-description {
+			font-size: 1.05em;
+			line-height: 1.5;
+		}
+
+	}
+
+  .new-town {
+    @include background-tile;
+    height: 135px;
+    width: 500px;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+  }
+
+}
+
+/* New Itinerary Form styles */
+
+.new-town-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+}
+
+/* Edit Itinerary form */
+
+.edit-town-form {
+
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+}
+
+/* Itinerary show info */
+
+.town-info {
+	@include background-tile;
+  height: 160px;
+  width: 350px;
+  border-bottom: 1px solid gainsboro;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+
+	.town-name {
+		margin-top: 0;
+		font-size: 2.5em;
+	}
+
+	.town-description {
+		font-size: 1.05em;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.town-desc {
 		font-size: 1.05em;
 		line-height: 1.5;
 		margin-bottom: 15px;

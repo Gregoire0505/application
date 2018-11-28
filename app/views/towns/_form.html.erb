@@ -1,0 +1,7 @@
+
+<%= simple_form_for @town, :html => { :multipart => true } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.button :submit, :class => "btn btn-custom2" %>
+<% end %>

@@ -14,3 +14,17 @@
   <% end %>
 
 </div>
+
+<%= link_to "UpVote", like_publication_comment_path(comment.publication, comment), class:"like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align">
+    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true" > </span>
+    <span class="badge"> <%= comment.get_upvotes.size %> </span>
+  </button>
+  <% end %>
+
+<%= link_to "DownVote", dislike_publication_comment_path(comment.publication, comment), class:"like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align">
+    <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true" > </span>
+    <span class="badge"> <%= comment.get_downvotes.size %> </span>
+  </button>
+<% end %>

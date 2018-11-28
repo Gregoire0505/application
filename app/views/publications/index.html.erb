@@ -1,18 +1,17 @@
-<h1> This is our Home Page with the different publications </h1>
-<p> The time is now <% t = Time.now %> <%= t.to_s %> </p>
+<div class="row">
 
-<h3> Publications available </h3>
+    <h1> Home Page </h1>
 
+    <h3> Publications available </h3>
+    <%= @publications.each do |publication| %>
 
-<%= @publications.each do |publication| %>
-
-      <div class="col-sm-5 col-md-3">
-
-          <div style="text-align: center;">
-            <h3>  <a href="/publications/<%= publication.id %>"> <%= publication.title %> </a> </h3>
-            <%= image_tag publication.publication_img.url(:publication_index), class: "publication" %>
+          <div class="col-sm-5 col-md-3">
+              <div style="text-align: center;">
+                <h3>  <a href="/publications/<%= publication.id %>"> <%= publication.title %> </a> </h3>
+                <%= image_tag publication.publication_img.url(:publication_index), class: "publication" %>
+              </div>
           </div>
 
-      </div>
+    <% end %>
 
-<% end %>
+</div>

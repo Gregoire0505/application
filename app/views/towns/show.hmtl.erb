@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6">
+      <div class="town-info">
+          <h2 class="town-name"> <%= @town.name %> </h2>
+          <
+          <p class="town-description"> <b> Description of the town : </b> <%= @town.description %> </p>
+          <p class="town-location"> <b> Location : </b>  <%= @town.location %> </p>
+
+      </div>
+      <br>
+        <% if user_signed_in? %>
+        <div class="links btn-group" >
+          <%= link_to "Back", towns_path, class: "btn btn-custom" %>
+          <%= link_to "Edit", edit_town_path(@town), class: "btn btn-custom" %>
+          <%= link_to "Delete", town_path(@town), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-custom" %>
+        </div>
+    <% end %>
+  </div>
+</div>

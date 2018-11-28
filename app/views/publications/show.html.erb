@@ -8,8 +8,8 @@
       <div class="publication-info" >
           <h2 class="publication-title"> <%= @publication.title %> </h2>
           <h3 class="avg-rating"> Average rating </h3>
-          <div class="average-publication-rating" data-score=<%= @average_publication %>> </div>
-          <span class="number-of-comments"> Based on <%= @publication.comments.count %> comments </span>
+            <div class="average-publication-rating" data-score=<%= @average_publication %>> </div>
+            <span class="number-of-comments"> Based on <%= @publication.comments.count %> comments </span>
           <h5 class="publication-author"> <b> Author : </b> <%= @publication.user_id %>  </h5>
           <h5 class="publication-town"> <b> Town : </b> <%= @publication.town_id %>  </h5>
           <h5> <b> Type : </b>  <%= @publication.publication_type %> </h5>
@@ -36,6 +36,12 @@
         <h1> Comments </h1>
           <%= render @publication.comments %>
             <div>
+
+              <div class="caption" style="text-align: center;">
+                <%= render comment %>
+                 </div>
+
+
               <%= link_to "Add Comment", new_publication_comment_path(@publication), class: "btn btn-custom" %>
             </div>
         </div>
