@@ -21,6 +21,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.5'
 gem 'paperclip', '~> 6.1'
 gem 'acts_as_votable', '~> 0.12.0'
+gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
