@@ -3,11 +3,20 @@ class PublicationsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
 
   def index
-    @publications = Publication.all.order("created_at DESC")
+    if params[:town].blank?
+      @publications = Publication.all.order("created_at DESC")
+    else
+      @town_id = Town.find_by(name: params[:town]).id
+      @publications = Publication.where(:town_id => @town_id).order("created_at DESC")
+    end
   end
 
   def show
-
+    if @publication.comments.blank?
+      @average_publication = 0
+    else
+      @average_publication = @publication.comments.average(:rating).round(2)
+    end
   end
 
   def new

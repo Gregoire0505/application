@@ -2,16 +2,18 @@
 
     <h1> Home Page </h1>
 
-    <h3> Publications available </h3>
-    <%= @publications.each do |publication| %>
+    <h3 class="current-town"><%= params[:town] %> </h3>
 
+    <% if @publications.count == 0 %>
+      <h3> There are no publications for this town </h3>
+      <% else %>
+        <%= @publications.each do |publication| %>
           <div class="col-sm-5 col-md-3">
               <div style="text-align: center;">
                 <h3>  <a href="/publications/<%= publication.id %>"> <%= publication.title %> </a> </h3>
                 <%= image_tag publication.publication_img.url(:publication_index), class: "publication" %>
               </div>
           </div>
-
     <% end %>
-
+  <% end %>
 </div>

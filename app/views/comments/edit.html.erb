@@ -1,7 +1,16 @@
 <h3> Edit your comment </h3>
 
 <%= simple_form_for([@publication, @comment]) do |f| %>
-  <%= f.input :rating %>
+  <div id="comment-form">
+    <label> Rating </label>
+  </div>
   <%= f.input :commentaire %>
   <%= f.button :submit %>
 <% end %>
+
+<script>
+  $('#comment-form').raty({
+    path: '/assets/',
+    scoreName: 'comment[rating]'
+  });
+</script>
