@@ -7,7 +7,7 @@
     <% if @publications.count == 0 %>
       <h3> There are no publications for this town </h3>
       <% else %>
-        <%= @publications.each do |publication| %>
+        <% @publications.each do |publication| %>
           <div class="col-sm-5 col-md-3">
               <div style="text-align: center;">
                 <h3>  <a href="/publications/<%= publication.id %>"> <%= publication.title %> </a> </h3>
