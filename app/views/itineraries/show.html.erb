@@ -9,9 +9,16 @@
 
       </div>
       <br>
-      <%= link_to "Back", itineraries_path, class: "btn btn-custom" %>
-      <%= link_to "Edit", edit_itinerary_path(@itinerary), class: "btn btn-custom" %>
-      <%= link_to "Delete", itinerary_path(@itinerary), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-custom" %>
+      <div class="links btn-group">
+        <%= link_to "Back", itineraries_path, class: "btn btn-custom" %>
+
+          <% if user_signed_in? %>
+            <% if @publication.user_id == current_user.id %>
+              <%= link_to "Edit", edit_itinerary_path(@itinerary), class: "btn btn-custom" %>
+              <%= link_to "Delete", itinerary_path(@itinerary), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-custom" %>
+            <% end %>
+          <% end %>
+      </div>
 
   </div>
 </div>

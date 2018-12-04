@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Application48</title>
+    <title> Application48 </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -25,6 +25,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <%= link_to "Home", root_path, class: "navbar-brand navbar-left" %>
+        </div>
 
         <ul class="nav navbar-nav">
           <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
@@ -48,15 +49,15 @@
               </ul>
           </li>
 
-
           <% if user_signed_in? %>
-          <li> <%= link_to "Create Publication", new_publication_path %> </li>
-          <li> <%= link_to "Itinerary", itineraries_path %> </li>
-          <li> <%= link_to "Town", towns_path %> </li>
+            <li> <%= link_to "Create Publication", new_publication_path %> </li>
+            <li> <%= link_to "Itinerary", itineraries_path %> </li>
+            <li> <%= link_to "Town", towns_path %> </li>
+            <li> <%= link_to "Profil" %> </li>
           <% end %>
         </ul>
 
-      
+
       </div>
     </div>
   </nav>

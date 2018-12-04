@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :publications do
+    put :favorite, on: :member
     resources :comments do
       member do
         put "like" => "comments#upvote"

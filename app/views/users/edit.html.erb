@@ -1,0 +1,17 @@
+
+<div class="col-md-6 col-md-offset-3">
+  <div class="edit-user-form" >
+
+    <h2> Edit <%= @user.name %> </h2>
+
+    <%= simple_form_for @user, :html => { :multipart => true } do |f| %>
+      <%= f.input :user_name %>
+      <%= f.button :submit, :class => "btn btn-custom2" %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <p> <%= link_to "Back", root_path, class: "btn btn-custom" %> </p>
+
+</div>

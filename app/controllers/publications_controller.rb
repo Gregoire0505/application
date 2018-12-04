@@ -62,6 +62,26 @@ class PublicationsController < ApplicationController
       redirect_to @publication
     end
 
+  # Add and remove favorite recipes
+  # for current_user
+  def favorite
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @publication
+      redirect_to :back, notice: 'You favorited #{@publication.name}'
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@publication)
+      redirect_to :back, notice: 'Unfavorited #{@publication.name}'
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
+
+
   private
     def publication_params
       params.require(:publication).permit(:title, :town, :publication_type, :text, :publication_img)

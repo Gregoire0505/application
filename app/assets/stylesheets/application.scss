@@ -17,9 +17,6 @@
 @import "bootstrap";
 
 
-.thumb-box {
-  height: 400px
-}
 
 /* Variables, mixins, etc.. */
 
@@ -121,7 +118,7 @@ p.alert, p.notice {
 	font-family: 'Ubuntu', sans-serif;
 	&:hover {
 		text-decoration: none;
-		background-color: #333;
+		background-color: darken(#f1c40f, 5%);
 		color: #fff;
 		transition: 0.5s;
 	}
@@ -157,7 +154,7 @@ p.alert, p.notice {
 
 .publication-show {
 	height: 425px;
-	width: 405px;
+	width: 455px;
 	@include background-tile;
 }
 
@@ -320,7 +317,6 @@ p.alert, p.notice {
 
 .itineraries {
 
-
 	margin-top: 20px;
 
 	h1 {
@@ -355,7 +351,7 @@ p.alert, p.notice {
     width: 500px;
     border-bottom: 1px solid gainsboro;
     margin-bottom: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
   }
 
 }

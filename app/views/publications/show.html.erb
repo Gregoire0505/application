@@ -7,11 +7,11 @@
     <div class="col-md-6" >
       <div class="publication-info" >
           <h2 class="publication-title"> <%= @publication.title %> </h2>
-            <h3> Average rating </h3>
+            <h4> Average rating </h4>
               <div class="average-comment-rating" data-score= <%= @average_publication %>> </div>
               <span class="number-of-comments"> Based on <%= @publication.comments.count %> comments </span>
-            <h5 class="publication-author"> <b> Author : </b> <%= @publication.user_id %>  </h5>
-            <h5 class="publication-town"> <b> Town : </b> <%= @publication.town_id %>  </h5>
+            <h5 class="publication-author"> <b> Author : </b> <%= @publication.user.user_name %>  </h5>
+            <h5 class="publication-town"> <b> Town : </b> <%= @publication.town.name %>  </h5>
             <h5> <b> Type : </b>  <%= @publication.publication_type %> </h5>
             <h5 class="publication-description"> <b> Text : </b> <%= @publication.text %> </h5>
         </div>
@@ -24,6 +24,8 @@
                 <%= link_to "Edit", edit_publication_path(@publication), class: "btn btn-custom" %>
                 <%= link_to "Delete", publication_path(@publication), method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-custom" %>
               <% end %>
+                <%= link_to "Favorite",   favorite_publication_path(@publication, type: "favorite"), method: :put, class: "btn btn-custom" %>
+                <%= link_to "Unfavorite", favorite_publication_path(@publication, type: "unfavorite"), method: :put, class: "btn btn-custom" %>
             <% end %>
         </div>
     </div>

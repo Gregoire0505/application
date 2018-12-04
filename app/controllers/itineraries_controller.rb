@@ -1,5 +1,6 @@
 class ItinerariesController < ApplicationController
   before_action :find_itinerary, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
     def index
       @itineraries = Itinerary.all.order("created_at DESC")
